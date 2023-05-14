@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_state_management_course/provider/example_one_provider.dart';
+import 'package:provider/provider.dart';
 
 class ExampleOneScreen extends StatefulWidget {
   const ExampleOneScreen({Key? key}) : super(key: key);
@@ -8,42 +10,48 @@ class ExampleOneScreen extends StatefulWidget {
 }
 
 class _ExampleOneScreenState extends State<ExampleOneScreen> {
-  double value = 1.0;
-
   @override
   Widget build(BuildContext context) {
+    // final provider = Provider.of<ExampleOneProvider>(context, listen: false);
+    print('Build 1');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Example One'),
+        title: const Text('Example One'),
         centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Slider(
-            min: 0,max: 1,
-              value: value, onChanged: (val) {
-              setState(() {
-                print(value);
-                value = val;
-              });
+          Consumer<ExampleOneProvider>(builder: (context, value, child) {
+            return Slider(
+                min: 0,
+                max: 1,
+                value: value.value,
+                onChanged: (val) {
+                  value.setValue(val);
+                  print('Build 2');
+                });
           }),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                    height: 100,
-                    decoration: BoxDecoration(color: Colors.green.withOpacity(value)),
-                    child: const Center(child: Text('Container 1'))),
-              ),
-              Expanded(
-                child: Container(
-                    height: 100,
-                    decoration: BoxDecoration(color: Colors.red.withOpacity(value)),
-                    child: const Center(child: Text('Container 2'))),
-              ),
-            ],
-          ),
+          Consumer<ExampleOneProvider>(builder: (context, value, child) {
+            return Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.green.withOpacity(value.value)),
+                      child: const Center(child: Text('Container 1'))),
+                ),
+                Expanded(
+                  child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.red.withOpacity(value.value)),
+                      child: const Center(child: Text('Container 2'))),
+                ),
+              ],
+            );
+          })
         ],
       ),
     );
