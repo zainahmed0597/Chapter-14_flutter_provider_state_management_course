@@ -17,7 +17,7 @@ class _WhyProviderScreenState extends State<WhyProviderScreen> {
     // TODO: implement initState
     super.initState();
 
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       x++;
       // print(x);
       setState(() {
