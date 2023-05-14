@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  int x = 5;
+  int x = 35;
   final String name = 'Xano';
 
   @override
