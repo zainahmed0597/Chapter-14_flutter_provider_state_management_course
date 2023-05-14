@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
-  final int x = 100;
+  int x = 5;
   final String name = 'Xano';
 
   @override
   Widget build(BuildContext context) {
-    print('Build');
+    print('Build 1');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Provider Tutorials'),
         centerTitle: true,
       ),
-      body:  Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[Text('Hello $name! $x'.toString())],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text(
+              'My $name! $x'.toString(),
+              style: const TextStyle(
+                fontSize: 50.0,
+              ),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          x++;
+          print(x);
+        },
       ),
     );
   }
