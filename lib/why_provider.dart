@@ -39,7 +39,10 @@ class _WhyProviderScreenState extends State<WhyProviderScreen> {
         children: <Widget>[
           Center(
             child: Text(
-              "${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}",style: const TextStyle(
+              "${DateTime.now().hour}:"
+                  "${DateTime.now().minute}:"
+                  "${DateTime.now().second}",
+              style: const TextStyle(
               fontSize: 50.0,
             ),
             ),

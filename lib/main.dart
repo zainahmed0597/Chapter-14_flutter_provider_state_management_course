@@ -4,6 +4,8 @@ import 'package:flutter_provider_state_management_course/screen/count_example.da
 import 'package:flutter_provider_state_management_course/why_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'screen/example_one.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const CountExample(),
+        home:  ExampleOneScreen(),
       ),
     );
   }

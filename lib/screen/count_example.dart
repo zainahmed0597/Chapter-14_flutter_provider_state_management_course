@@ -18,9 +18,8 @@ class _CountExampleState extends State<CountExample> {
     // TODO: implement initState
     super.initState();
     final counterProvider = Provider.of<CountProvider>(context, listen: false);
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       counterProvider.setCount();
-
     });
   }
   
@@ -34,9 +33,24 @@ class _CountExampleState extends State<CountExample> {
       body: Center(
         child: Consumer<CountProvider>(
           builder: (context, value, child) {
-            return Text(
-              value.count.toString(),
-              style: const TextStyle(fontSize: 50.0),
+            print('Build 2');
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "${DateTime.now().hour}:"
+                      "${DateTime.now().minute}:"
+                      "${DateTime.now().second}",
+                  style: const TextStyle(
+                    fontSize: 50.0,
+                  ),
+                ),
+                Text(
+                  value.count.toString(),
+                  style: const TextStyle(fontSize: 50.0),
+                ),
+              ],
             );
           },
         ),
