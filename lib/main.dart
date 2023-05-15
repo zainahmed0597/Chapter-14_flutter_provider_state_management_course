@@ -3,7 +3,7 @@ import 'package:flutter_provider_state_management_course/provider/count_provider
 import 'package:flutter_provider_state_management_course/provider/example_one_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/favourite_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/theme_changer_provider.dart';
-import 'package:flutter_provider_state_management_course/screen/screens/dark_theme.dart';
+import 'package:flutter_provider_state_management_course/screen/screens/value_notify_listner.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
               color: Colors.teal,
             ),
           ),
-          home: DarkThemeScreen(),
+          home: NotifyListenerScreen(),
         );
       }),
     );
