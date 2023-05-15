@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:provider/provider.dart';
 
 class ExampleOneProvider with ChangeNotifier {
   double _value = 1.0;
