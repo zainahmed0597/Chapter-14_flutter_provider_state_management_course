@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_state_management_course/provider/favourite_provider.dart';
-import 'package:flutter_provider_state_management_course/screen/favourite/myfavourite.dart';
 import 'package:provider/provider.dart';
+
+import 'myfavourite.dart';
 
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({Key? key}) : super(key: key);

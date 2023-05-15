@@ -3,7 +3,7 @@ import 'package:flutter_provider_state_management_course/provider/count_provider
 import 'package:flutter_provider_state_management_course/provider/example_one_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/favourite_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/theme_changer_provider.dart';
-import 'package:flutter_provider_state_management_course/screen/favourite/dark_theme.dart';
+import 'package:flutter_provider_state_management_course/screen/screens/dark_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
