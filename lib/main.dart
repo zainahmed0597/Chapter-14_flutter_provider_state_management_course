@@ -3,7 +3,7 @@ import 'package:flutter_provider_state_management_course/provider/count_provider
 import 'package:flutter_provider_state_management_course/provider/example_one_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/favourite_provider.dart';
 import 'package:flutter_provider_state_management_course/provider/theme_changer_provider.dart';
-import 'package:flutter_provider_state_management_course/screen/screens/value_notify_listner.dart';
+import 'package:flutter_provider_state_management_course/screen/screens/login.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteItemsProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChanger()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(builder: (BuildContext context){
         final themeChanger = Provider.of<ThemeChanger>(context);
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
               color: Colors.teal,
             ),
           ),
-          home: NotifyListenerScreen(),
+          home: LoginScreen(),
         );
       }),
     );
