@@ -40,6 +40,8 @@ class NetworkApiServices extends BaseApiServices {
         dynamic responseJson = jsonDecode(response.body);
         return responseJson;
       case 400:
+        throw BadRequestException(response.body.toString());
+      case 404:
         throw UnauthorisedException(response.body.toString());
       default:
         throw FetchDataException('Error accrued while communicating with server' +
