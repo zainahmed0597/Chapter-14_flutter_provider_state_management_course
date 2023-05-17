@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_state_management_course/utils/routes/routes.dart';
+import 'package:flutter_provider_state_management_course/utils/routes/routes_name.dart';
+
 
 
 void main() {
@@ -15,30 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: HomeScreen(),
+      initialRoute: RoutesName.login,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("MVVM App"),
-      ),
-      body: Column(
-        children: [],
-      ),
-    );
-  }
-}
 
