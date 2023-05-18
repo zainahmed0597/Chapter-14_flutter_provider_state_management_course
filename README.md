@@ -15,7 +15,7 @@
 * Will cover up what we have learned and what we will do after that.
 * Complete app with provider using MVVM architecture with rest APIs.
 
-* This repo divide in to branch check here.
+* This repo divide into two branch check here.
 - [Development Branch: 1](https://github.com/zainahmed0597/Chapter-14_flutter_provider_state_management_course/tree/dev1)
 - [Development Branch: 2](https://github.com/zainahmed0597/Chapter-14_flutter_provider_state_management_course/tree/dev2)
 
